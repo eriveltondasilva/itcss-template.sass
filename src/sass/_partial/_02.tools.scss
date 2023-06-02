@@ -1,0 +1,54 @@
+// *functions
+
+/// Function dist() - atalho para as pastas e itens da pasta 'dist'.
+/// @param {string} $folder - caminho para as pastas dentro de 'dist'.
+/// @param {string} $file - caminho para os itens da pasta escolhida pela variável $folder.
+/// @return {string} a função retornará a url('/dist/$folder/$file').
+@function dist($folder, $file) {
+    @return url('/dist/' + $folder + '/' + $file);
+}
+
+/// Function img() - atalho dos itens da pasta 'images'.
+/// @param {string} $file - caminho para os itens da pasta 'images'.
+/// @return {string} a função retornará a url('/dist/images/$file').
+@function img($file) {
+    @return dist('images', $file);
+}
+
+/// Function icon() - atalho dos itens da pasta 'icons'.
+/// @param {string} $file - caminho para os itens da pasta 'icons'.
+/// @return {string} a função retornará a url('/dist/icons/$file').
+@function icon($file) {
+    @return dist('icons', $file);
+}
+
+/// Function font() - atalho dos itens da pasta 'fonts'.
+/// @param {string} $file - caminho para os itens da pasta 'fonts'.
+/// @return {string} a função retornará a url('/dist/fonts/$file').
+@function font($file) {
+    @return dist('fonts', $file);
+}
+
+/// Function lighter() -
+/// @param {color} $color - a cor que será deixada mais clara.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais claro.
+/// @return {color} retorna uma cor mais clara.
+@function lighter($color, $percent: 80) {
+    @return mix($color, #fff, $percent);
+}
+
+/// Function darker() -
+/// @param {color} $color - a cor que será deixada mais escura.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais escuro.
+/// @return {color} retorna uma cor mais escura.
+@function darker($color, $percent: 80) {
+    @return mix($color, #000, $percent);
+}
+
+// *mixins
+
+@mixin flex-center {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}

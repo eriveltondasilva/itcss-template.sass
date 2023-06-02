@@ -1,1 +1,1 @@
-alert('olá, mundo!')
+// alert('olá, mundo!')
