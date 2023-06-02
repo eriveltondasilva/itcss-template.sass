@@ -1,1 +1,1 @@
-# simples-boilerplate
+# simple boilerplate - vite, sass/scss, ts
